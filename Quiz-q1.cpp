@@ -4,27 +4,29 @@
 using namespace std;
 
 int main() {
-    int N;
-    float charge, disCharge, totalRev = 0;
-
+	//variable declaration
+    int n;
+    float price, discountedPrice, total = 0,discount = 0.05;
+    //inputing the value
     cout << "Enter number of dresses stitched: ";
-    cin >> N;
-
-    for (int i = 1; i <= N; ++i) {
+    cin >> n;
+    //processing the input
+    for (int i = 1; i <= n; ++i) {
         cout << "Enter charge for dress " << i << ": ";
-        cin >> charge;
+        cin >> price;
 
-        if (charge > 1000) {
-            disCharge = charge * 0.95; // 5% discount
+        if (price > 1000) {
+            discountedPrice = price * discount; // 5% discount
         } else {
-            disCharge = charge;
+           discountedPrice = price;
         }
 
-        cout << "Discounted charge for dress " << i << ": " << disCharge << endl;
-        totalRev += disCharge;
+        cout << "Discounted charge for dress " << i << ": " << discountedPrice << endl;
+        total += discountedPrice;
     }
-
-    cout << "Total revenue: " << totalRev << endl;
+    //output
+    cout << "Total revenue: " << total << endl;
 
     return 0;
 }
+
